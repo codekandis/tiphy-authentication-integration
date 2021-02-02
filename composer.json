@@ -1,0 +1,48 @@
+{
+	"name": "codekandis/tiphy-authentication-integration",
+	"description": "This library is an integration of `codekandis/authentication` into `codekandis/tiphy`.",
+	"keywords": [
+		"php",
+		"tiphy",
+		"authentication",
+		"integration"
+	],
+	"minimum-stability": "stable",
+	"prefer-stable": true,
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Christian Ramelow",
+			"email": "info@codekandis.net",
+			"homepage": "https://codekandis.net",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "edv@medialogistik.de",
+		"issues": "https://github.com/codekandis/tiphy-authentication-integration/issues",
+		"docs": "https://github.com/codekandis/tiphy-authentication-integration/blob/master/README.md",
+		"source": "https://github.com/codekandis/tiphy-authentication-integration/tree/master"
+	},
+	"require": {
+		"php": "^7.4"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-master",
+		"codekandis/phpunit": "^3"
+	},
+	"autoload": {
+		"psr-4": {
+			"CodeKandis\\TiphyAuthenticationIntegration\\": [
+				"src/"
+			]
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"CodeKandis\\TiphyAuthenticationIntegration\\Tests\\": [
+				"tests/"
+			]
+		}
+	}
+}
