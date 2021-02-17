@@ -25,7 +25,9 @@
 		"source": "https://github.com/codekandis/tiphy-authentication-integration/tree/master"
 	},
 	"require": {
-		"php": "^7.4"
+		"php": "^7.4",
+		"codekandis/tiphy": "^0",
+		"codekandis/authentication": "^0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
