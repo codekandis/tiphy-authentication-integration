@@ -2,7 +2,6 @@
 namespace CodeKandis\TiphyAuthenticationIntegration\Persistence\Repositories\Authentication;
 
 use CodeKandis\Tiphy\Persistence\MariaDb\Repositories\AbstractRepository;
-use CodeKandis\Tiphy\Persistence\PersistenceException;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntity;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntityInterface;
 
@@ -41,19 +40,12 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 			'key' => $user->apiKey
 		];
 
-		try
-		{
-			$this->databaseConnector->beginTransaction();
-			/** @var UserEntity $result */
-			$result = $this->databaseConnector->queryFirst( $query, $arguments, UserEntity::class );
-			$this->databaseConnector->commit();
-		}
-		catch ( PersistenceException $exception )
-		{
-			$this->databaseConnector->rollback();
-			throw $exception;
-		}
-
-		return $result;
+		return $this->asTransaction(
+			function () use ( $query, $arguments ): ?UserEntityInterface
+			{
+				/** @var ?UserEntityInterface */
+				return $this->databaseConnector->queryFirst( $query, $arguments, UserEntity::class );
+			}
+		);
 	}
 }
