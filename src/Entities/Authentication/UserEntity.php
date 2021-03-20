@@ -39,4 +39,82 @@ class UserEntity extends AbstractEntity implements UserEntityInterface
 	 * @var string
 	 */
 	public string $apiKey = '';
+
+	/**
+	 */
+	public function getId(): string
+	{
+		return $this->id;
+	}
+
+	/**
+	 */
+	public function setId( string $id ): void
+	{
+		$this->id = $id;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getIsActive(): string
+	{
+		return $this->isActive;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function setIsActive( string $isActive ): void
+	{
+		$this->isActive = $isActive;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getName(): string
+	{
+		return $this->name;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function setName( string $name ): void
+	{
+		$this->name = $name;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getEmail(): string
+	{
+		return $this->email;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function setEmail( string $email ): void
+	{
+		$this->email = $email;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getApiKey(): string
+	{
+		return $this->apiKey;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function setApiKey( string $apiKey ): void
+	{
+		$this->apiKey = $apiKey;
+	}
 }
