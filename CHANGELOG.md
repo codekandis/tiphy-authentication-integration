@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.3.0] - 2021-03-20
+
+### Added
+
+* `CODE_OF_CONDUCT.md`
+
+### Changed
+
+* `UserEntityInterface` and `UserEntity`
+* `UsersRepositoryInterface` and `UsersRepository`
+
+### Fixed
+
+* PHPDoc
+
+[0.3.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.2.0..0.3.0
+
+---
 ## [0.2.0] - 2021-02-25
 
 ### Changed
