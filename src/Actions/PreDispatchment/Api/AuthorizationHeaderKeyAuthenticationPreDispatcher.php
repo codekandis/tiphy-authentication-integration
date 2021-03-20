@@ -8,9 +8,18 @@ use CodeKandis\Authentication\KeyBasedStatelessAuthenticator;
 use CodeKandis\Authentication\RegisteredKeyBasedClient;
 use CodeKandis\Tiphy\Actions\PreDispatchment\PreDispatcherInterface;
 use CodeKandis\Tiphy\Actions\PreDispatchment\PreDispatchmentStateInterface;
+use CodeKandis\Tiphy\Persistence\MariaDb\FetchingResultFailedException;
+use CodeKandis\Tiphy\Persistence\MariaDb\SettingFetchModeFailedException;
+use CodeKandis\Tiphy\Persistence\MariaDb\StatementExecutionFailedException;
+use CodeKandis\Tiphy\Persistence\MariaDb\StatementPreparationFailedException;
+use CodeKandis\Tiphy\Persistence\MariaDb\TransactionCommitFailedException;
+use CodeKandis\Tiphy\Persistence\MariaDb\TransactionRollbackFailedException;
+use CodeKandis\Tiphy\Persistence\MariaDb\TransactionStartFailedException;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntity;
+use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntityInterface;
 use CodeKandis\TiphyAuthenticationIntegration\Persistence\Repositories\Authentication\UsersRepositoryInterface;
 use JsonException;
+use ReflectionException;
 
 /**
  * Represents an authorization header key authentication pre-dispatcher.
@@ -48,10 +57,21 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 	 * Gets the registered client matching the API key.
 	 * @param string The API key sent by the client.
 	 * @return ?RegisteredKeyBasedClient The registered client matching the API key.
+	 * @throws ReflectionException An error occurred during an entity creation.
+	 * @throws TransactionStartFailedException The transaction failed to start.
+	 * @throws TransactionRollbackFailedException The transaction failed to roll back.
+	 * @throws TransactionCommitFailedException The transaction failed to commit.
+	 * @throws StatementPreparationFailedException The preparation of the statement failed.
+	 * @throws StatementExecutionFailedException The execution of the statement failed.
+	 * @throws SettingFetchModeFailedException The setting of the fetch mode of the statement failed.
+	 * @throws FetchingResultFailedException The fetching of the statment result failed.
 	 */
 	private function getRegisteredClient( string $apiKey ): ?RegisteredKeyBasedClient
 	{
 		$registeredUser = $this->usersRepository->readUserByKey(
+		/**
+		 * @var UserEntityInterface
+		 */
 			UserEntity::fromArray(
 				[
 					'apiKey' => $apiKey
@@ -61,7 +81,11 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 
 		return null === $registeredUser
 			? null
-			: new RegisteredKeyBasedClient( '', $registeredUser->apiKey, (int) $registeredUser->isActive );
+			: new RegisteredKeyBasedClient(
+				'',
+				$registeredUser->getApiKey(),
+				(int) $registeredUser->getIsActive()
+			);
 	}
 
 	/**
@@ -77,7 +101,15 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
+	 * @throws ReflectionException An error occurred during an entity creation.
+	 * @throws TransactionStartFailedException The transaction failed to start.
+	 * @throws TransactionRollbackFailedException The transaction failed to roll back.
+	 * @throws TransactionCommitFailedException The transaction failed to commit.
+	 * @throws StatementPreparationFailedException The preparation of the statement failed.
+	 * @throws StatementExecutionFailedException The execution of the statement failed.
+	 * @throws SettingFetchModeFailedException The setting of the fetch mode of the statement failed.
+	 * @throws FetchingResultFailedException The fetching of the statment result failed.
 	 * @throws JsonException An error occurred during the creation of the JSON response.
 	 */
 	public function preDispatch( PreDispatchmentStateInterface $dispatchmentState ): void
