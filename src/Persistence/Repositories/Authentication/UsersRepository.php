@@ -43,7 +43,9 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 		return $this->asTransaction(
 			function () use ( $query, $arguments ): ?UserEntityInterface
 			{
-				/** @var ?UserEntityInterface */
+				/**
+				 * @var ?UserEntityInterface
+				 */
 				return $this->databaseConnector->queryFirst( $query, $arguments, UserEntity::class );
 			}
 		);
