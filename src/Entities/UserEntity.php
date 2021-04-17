@@ -1,5 +1,5 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication;
+namespace CodeKandis\TiphyAuthenticationIntegration\Entities;
 
 use CodeKandis\Tiphy\Entities\AbstractEntity;
 
