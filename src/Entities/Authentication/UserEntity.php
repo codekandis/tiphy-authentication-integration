@@ -4,7 +4,7 @@ namespace CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication;
 use CodeKandis\Tiphy\Entities\AbstractEntity;
 
 /**
- * Represents an users entity.
+ * Represents a user entity.
  * @package codekandis/tiphy-authentication-integration
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -18,9 +18,9 @@ class UserEntity extends AbstractEntity implements UserEntityInterface
 
 	/**
 	 * Stores whether the user is active.
-	 * @var string
+	 * @var bool
 	 */
-	public string $isActive = '';
+	public bool $isActive = false;
 
 	/**
 	 * Stores the name of the user.
@@ -57,7 +57,7 @@ class UserEntity extends AbstractEntity implements UserEntityInterface
 	/**
 	 * {@inheritDoc}
 	 */
-	public function getIsActive(): string
+	public function getIsActive(): bool
 	{
 		return $this->isActive;
 	}
@@ -65,7 +65,7 @@ class UserEntity extends AbstractEntity implements UserEntityInterface
 	/**
 	 * {@inheritDoc}
 	 */
-	public function setIsActive( string $isActive ): void
+	public function setIsActive( bool $isActive ): void
 	{
 		$this->isActive = $isActive;
 	}
