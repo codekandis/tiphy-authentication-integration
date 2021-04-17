@@ -2,7 +2,7 @@
 namespace CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication;
 
 /**
- * Represents the interface of all users entities.
+ * Represents the interface of all user entities.
  * @package codekandis/tiphy-authentication-integration
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -22,15 +22,15 @@ interface UserEntityInterface
 
 	/**
 	 * Gets whether the user is active.
-	 * @return string True if the user is active, false otherwise.
+	 * @return bool True if the user is active, false otherwise.
 	 */
-	public function getIsActive(): string;
+	public function getIsActive(): bool;
 
 	/**
 	 * Sets whether the user is active.
-	 * @param string $isActive True if the user is active, false otherwise.
+	 * @param bool $isActive True if the user is active, false otherwise.
 	 */
-	public function setIsActive( string $isActive ): void;
+	public function setIsActive( bool $isActive ): void;
 
 	/**
 	 * Gets the name of the user.
