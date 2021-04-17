@@ -1,9 +1,11 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\TiphyAuthenticationIntegration\Persistence\Repositories\Authentication;
 
+use CodeKandis\Tiphy\Entities\EntityPropertyMappings\EntityPropertyMapper;
 use CodeKandis\Tiphy\Persistence\MariaDb\Repositories\AbstractRepository;
-use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntity;
-use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntityInterface;
+use CodeKandis\TiphyAuthenticationIntegration\Entities\EntityPropertyMappings\UserEntityPropertyMappings;
+use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntity;
+use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntityInterface;
 
 /**
  * Represents an users repositories.
@@ -36,17 +38,23 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 				0, 1;
 		END;
 
+		$entityPropertyMapper = ( new EntityPropertyMapper(
+			UserEntity::class,
+			new UserEntityPropertyMappings()
+		) );
+		$mappedUser           = $entityPropertyMapper->mapToArray( $user );
+
 		$arguments = [
-			'key' => $user->apiKey
+			'key' => $user[ 'apiKey' ]
 		];
 
 		return $this->asTransaction(
-			function () use ( $query, $arguments ): ?UserEntityInterface
+			function () use ( $query, $arguments, $entityPropertyMapper ): ?UserEntityInterface
 			{
 				/**
 				 * @var ?UserEntityInterface
 				 */
-				return $this->databaseConnector->queryFirst( $query, $arguments, UserEntity::class );
+				return $this->databaseConnector->queryFirst( $query, $arguments, $entityPropertyMapper );
 			}
 		);
 	}
