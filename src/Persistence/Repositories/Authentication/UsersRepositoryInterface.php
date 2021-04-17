@@ -8,7 +8,8 @@ use CodeKandis\Tiphy\Persistence\MariaDb\StatementPreparationFailedException;
 use CodeKandis\Tiphy\Persistence\MariaDb\TransactionCommitFailedException;
 use CodeKandis\Tiphy\Persistence\MariaDb\TransactionRollbackFailedException;
 use CodeKandis\Tiphy\Persistence\MariaDb\TransactionStartFailedException;
-use CodeKandis\TiphyAuthenticationIntegration\Entities\Authentication\UserEntityInterface;
+use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntityInterface;
+use ReflectionException;
 
 /**
  * Represents the interface of all users respositories.
@@ -21,6 +22,7 @@ interface UsersRepositoryInterface
 	 * Reads an user specified by its ID.
 	 * @param UserEntityInterface $user The ID of the user.
 	 * @return ?UserEntityInterface The user if it exist, null otherwise.
+	 * @throws ReflectionException The entity class to reflect does not exist.
 	 * @throws TransactionStartFailedException The transaction failed to start.
 	 * @throws TransactionRollbackFailedException The transaction failed to roll back.
 	 * @throws TransactionCommitFailedException The transaction failed to commit.
