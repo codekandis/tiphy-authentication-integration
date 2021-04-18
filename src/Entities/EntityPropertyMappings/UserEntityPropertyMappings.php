@@ -20,6 +20,9 @@ class UserEntityPropertyMappings extends EntityPropertyMappings
 		$this->add(
 			new EntityPropertyMapping( 'id', null ),
 			new EntityPropertyMapping( 'isActive', new StringToBoolConverter() ),
+			new EntityPropertyMapping( 'name', null ),
+			new EntityPropertyMapping( 'email', null ),
+			new EntityPropertyMapping( 'apiKey', null )
 		);
 	}
 }
