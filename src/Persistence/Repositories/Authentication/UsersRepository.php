@@ -45,7 +45,7 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 		$mappedUser           = $entityPropertyMapper->mapToArray( $user );
 
 		$arguments = [
-			'key' => $user[ 'apiKey' ]
+			'key' => $mappedUser[ 'apiKey' ]
 		];
 
 		return $this->asTransaction(
