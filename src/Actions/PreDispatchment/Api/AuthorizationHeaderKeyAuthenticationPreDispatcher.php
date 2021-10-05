@@ -90,6 +90,7 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 
 	/**
 	 * Responds with a `401 Unauthorized`.
+	 * @param string redirectUri The URI to redirect to.
 	 * @param PreDispatchmentStateInterface $dispatchmentState The state of the dispatchment.
 	 * @throws JsonException An error occurred during the creation of the JSON response.
 	 */
@@ -112,7 +113,7 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 	 * @throws FetchingResultFailedException The fetching of the statment result failed.
 	 * @throws JsonException An error occurred during the creation of the JSON response.
 	 */
-	public function preDispatch( PreDispatchmentStateInterface $dispatchmentState ): void
+	public function preDispatch( string $requestedUri, PreDispatchmentStateInterface $dispatchmentState ): void
 	{
 		$authorizationHeader = $this->getAuthorizationHeader();
 
