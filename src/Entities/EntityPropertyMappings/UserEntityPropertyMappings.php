@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\TiphyAuthenticationIntegration\Entities\EntityPropertyMappings;
 
-use CodeKandis\Tiphy\Converters\TwoWaysConverters\StringToBoolConverter;
+use CodeKandis\Tiphy\Converters\BiDirectionalConverters\BoolToStringBiDirectionalConverter;
 use CodeKandis\Tiphy\Entities\EntityPropertyMappings\EntityPropertyMapping;
 use CodeKandis\Tiphy\Entities\EntityPropertyMappings\EntityPropertyMappings;
 
@@ -17,9 +17,9 @@ class UserEntityPropertyMappings extends EntityPropertyMappings
 	 */
 	public function __construct()
 	{
-		$this->add(
+		parent::__construct(
 			new EntityPropertyMapping( 'id', null ),
-			new EntityPropertyMapping( 'isActive', new StringToBoolConverter() ),
+			new EntityPropertyMapping( 'isActive', new BoolToStringBiDirectionalConverter() ),
 			new EntityPropertyMapping( 'name', null ),
 			new EntityPropertyMapping( 'email', null ),
 			new EntityPropertyMapping( 'apiKey', null )
