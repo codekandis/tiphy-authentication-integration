@@ -48,14 +48,9 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 			'key' => $mappedUser[ 'apiKey' ]
 		];
 
-		return $this->asTransaction(
-			function () use ( $query, $arguments, $entityPropertyMapper ): ?UserEntityInterface
-			{
-				/**
-				 * @var ?UserEntityInterface
-				 */
-				return $this->databaseConnector->queryFirst( $query, $arguments, $entityPropertyMapper );
-			}
-		);
+		/**
+		 * @var ?UserEntityInterface
+		 */
+		return $this->databaseConnector->queryFirst( $query, $arguments, $entityPropertyMapper );
 	}
 }
