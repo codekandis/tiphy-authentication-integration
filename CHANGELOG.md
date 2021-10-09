@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.7.0] - 2021-10-10
+
+### Changed
+
+* removes the query by transaction from the users repository.
+
+[0.7.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.6.0..0.7.0
+
+---
 ## [0.6.0] - 2021-10-06
 
 ### Changed
