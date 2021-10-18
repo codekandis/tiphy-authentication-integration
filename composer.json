@@ -27,7 +27,10 @@
 	"require": {
 		"php": "^7.4",
 		"codekandis/tiphy": "^0",
-		"codekandis/authentication": "^0"
+		"codekandis/authentication": "^0",
+		"codekandis/converters": "^0",
+		"codekandis/entities": "^0",
+		"codekandis/persistence": "^0"
 	},
 	"require-dev": {
 		"roave/security-advisories": "dev-master",
