@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.8.0] - 2021-10-18
+
+### Changed
+
+* implemented `codekandis/converters` to replace converter implementations
+* implemented `codekandis/entities` to replace entity implementations
+* implemented `codekandis/persistence` to replace persistence implementations
+
+[0.8.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.7.0..0.8.0
+
+---
 ## [0.7.0] - 2021-10-10
 
 ### Changed
