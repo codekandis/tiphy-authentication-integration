@@ -1,12 +1,12 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\TiphyAuthenticationIntegration\Entities\EntityPropertyMappings;
 
-use CodeKandis\Tiphy\Converters\BiDirectionalConverters\BoolToStringBiDirectionalConverter;
-use CodeKandis\Tiphy\Entities\EntityPropertyMappings\EntityPropertyMapping;
-use CodeKandis\Tiphy\Entities\EntityPropertyMappings\EntityPropertyMappings;
+use CodeKandis\Converters\BiDirectionalConverters\BoolToStringBiDirectionalConverter;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapping;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMappings;
 
 /**
- * Represents the entity property mappings of a user entity.
+ * Represents the entity property mappings of any user entity.
  * @package codekandis/tiphy-authentication-integration
  * @author Christian Ramelow <info@codekandis.net>
  */

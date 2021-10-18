@@ -1,12 +1,14 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\TiphyAuthenticationIntegration\Entities;
 
+use CodeKandis\Entities\EntityInterface;
+
 /**
- * Represents the interface of all user entities.
+ * Represents the interface of any user entity.
  * @package codekandis/tiphy-authentication-integration
  * @author Christian Ramelow <info@codekandis.net>
  */
-interface UserEntityInterface
+interface UserEntityInterface extends EntityInterface
 {
 	/**
 	 * Gets the ID of the user.

@@ -1,7 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\TiphyAuthenticationIntegration\Entities;
 
-use CodeKandis\Tiphy\Entities\AbstractEntity;
+use CodeKandis\Entities\AbstractEntity;
 
 /**
  * Represents a user entity.
