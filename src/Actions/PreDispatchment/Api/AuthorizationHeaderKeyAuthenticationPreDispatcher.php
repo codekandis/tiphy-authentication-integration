@@ -6,18 +6,17 @@ use CodeKandis\Authentication\AuthorizationHeader\ParsedAuthorizationHeaderInter
 use CodeKandis\Authentication\KeyBasedClientCredentials;
 use CodeKandis\Authentication\KeyBasedStatelessAuthenticator;
 use CodeKandis\Authentication\RegisteredKeyBasedClient;
+use CodeKandis\Persistence\MariaDb\FetchingResultFailedException;
+use CodeKandis\Persistence\MariaDb\SettingFetchModeFailedException;
+use CodeKandis\Persistence\MariaDb\StatementExecutionFailedException;
+use CodeKandis\Persistence\MariaDb\StatementPreparationFailedException;
+use CodeKandis\Persistence\MariaDb\TransactionCommitFailedException;
+use CodeKandis\Persistence\MariaDb\TransactionRollbackFailedException;
+use CodeKandis\Persistence\MariaDb\TransactionStartFailedException;
 use CodeKandis\Tiphy\Actions\PreDispatchment\PreDispatcherInterface;
 use CodeKandis\Tiphy\Actions\PreDispatchment\PreDispatchmentStateInterface;
-use CodeKandis\Tiphy\Persistence\MariaDb\FetchingResultFailedException;
-use CodeKandis\Tiphy\Persistence\MariaDb\SettingFetchModeFailedException;
-use CodeKandis\Tiphy\Persistence\MariaDb\StatementExecutionFailedException;
-use CodeKandis\Tiphy\Persistence\MariaDb\StatementPreparationFailedException;
-use CodeKandis\Tiphy\Persistence\MariaDb\TransactionCommitFailedException;
-use CodeKandis\Tiphy\Persistence\MariaDb\TransactionRollbackFailedException;
-use CodeKandis\Tiphy\Persistence\MariaDb\TransactionStartFailedException;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntity;
-use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntityInterface;
-use CodeKandis\TiphyAuthenticationIntegration\Persistence\Repositories\Authentication\UsersRepositoryInterface;
+use CodeKandis\TiphyAuthenticationIntegration\Persistence\MariaDb\Repositories\Authentication\UsersRepositoryInterface;
 use JsonException;
 use ReflectionException;
 
@@ -68,16 +67,15 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 	 */
 	private function getRegisteredClient( string $apiKey ): ?RegisteredKeyBasedClient
 	{
-		$registeredUser = $this->usersRepository->readUserByKey(
-		/**
-		 * @var UserEntityInterface
-		 */
-			UserEntity::fromArray(
-				[
-					'apiKey' => $apiKey
-				]
-			)
-		);
+		$registeredUser = $this
+			->usersRepository
+			->readUserByKey(
+				UserEntity::fromArray(
+					[
+						'apiKey' => $apiKey
+					]
+				)
+			);
 
 		return null === $registeredUser
 			? null

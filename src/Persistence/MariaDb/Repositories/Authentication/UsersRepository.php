@@ -1,14 +1,14 @@
 <?php declare( strict_types = 1 );
-namespace CodeKandis\TiphyAuthenticationIntegration\Persistence\Repositories\Authentication;
+namespace CodeKandis\TiphyAuthenticationIntegration\Persistence\MariaDb\Repositories\Authentication;
 
-use CodeKandis\Tiphy\Entities\EntityPropertyMappings\EntityPropertyMapper;
-use CodeKandis\Tiphy\Persistence\MariaDb\Repositories\AbstractRepository;
+use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapper;
+use CodeKandis\Persistence\MariaDb\Repositories\AbstractRepository;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\EntityPropertyMappings\UserEntityPropertyMappings;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntity;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntityInterface;
 
 /**
- * Represents an users repositories.
+ * Represents a repository for any user entity.
  * @package codekandis/tiphy-authentication-integration
  * @author Christian Ramelow <info@codekandis.net>
  */
@@ -48,9 +48,6 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 			'key' => $mappedUser[ 'apiKey' ]
 		];
 
-		/**
-		 * @var ?UserEntityInterface
-		 */
 		return $this->databaseConnector->queryFirst( $query, $arguments, $entityPropertyMapper );
 	}
 }
