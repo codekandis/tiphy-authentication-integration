@@ -6,13 +6,13 @@ use CodeKandis\Authentication\AuthorizationHeader\ParsedAuthorizationHeaderInter
 use CodeKandis\Authentication\KeyBasedClientCredentials;
 use CodeKandis\Authentication\KeyBasedStatelessAuthenticator;
 use CodeKandis\Authentication\RegisteredKeyBasedClient;
-use CodeKandis\Persistence\MariaDb\FetchingResultFailedException;
-use CodeKandis\Persistence\MariaDb\SettingFetchModeFailedException;
-use CodeKandis\Persistence\MariaDb\StatementExecutionFailedException;
-use CodeKandis\Persistence\MariaDb\StatementPreparationFailedException;
-use CodeKandis\Persistence\MariaDb\TransactionCommitFailedException;
-use CodeKandis\Persistence\MariaDb\TransactionRollbackFailedException;
-use CodeKandis\Persistence\MariaDb\TransactionStartFailedException;
+use CodeKandis\Persistence\FetchingResultFailedException;
+use CodeKandis\Persistence\SettingFetchModeFailedException;
+use CodeKandis\Persistence\StatementExecutionFailedException;
+use CodeKandis\Persistence\StatementPreparationFailedException;
+use CodeKandis\Persistence\TransactionCommitFailedException;
+use CodeKandis\Persistence\TransactionRollbackFailedException;
+use CodeKandis\Persistence\TransactionStartFailedException;
 use CodeKandis\Tiphy\Actions\PreDispatchment\PreDispatcherInterface;
 use CodeKandis\Tiphy\Actions\PreDispatchment\PreDispatchmentStateInterface;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntity;
@@ -88,7 +88,6 @@ class AuthorizationHeaderKeyAuthenticationPreDispatcher implements PreDispatcher
 
 	/**
 	 * Responds with a `401 Unauthorized`.
-	 * @param string redirectUri The URI to redirect to.
 	 * @param PreDispatchmentStateInterface $dispatchmentState The state of the dispatchment.
 	 * @throws JsonException An error occurred during the creation of the JSON response.
 	 */
