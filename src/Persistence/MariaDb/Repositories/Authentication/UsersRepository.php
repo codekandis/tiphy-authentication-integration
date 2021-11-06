@@ -2,7 +2,7 @@
 namespace CodeKandis\TiphyAuthenticationIntegration\Persistence\MariaDb\Repositories\Authentication;
 
 use CodeKandis\Entities\EntityPropertyMappings\EntityPropertyMapper;
-use CodeKandis\Persistence\MariaDb\Repositories\AbstractRepository;
+use CodeKandis\Persistence\Repositories\AbstractRepository;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\EntityPropertyMappings\UserEntityPropertyMappings;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntity;
 use CodeKandis\TiphyAuthenticationIntegration\Entities\UserEntityInterface;
