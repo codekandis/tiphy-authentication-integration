@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.10.0] - 2022-06-24
+
+### Added
+
+* LDAP authenticator configuration
+* LDAP session authenticator configuration
+
+[0.10.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.9.0..0.10.0
+
+---
 ## [0.9.0] - 2022-05-12
 
 ### Added
