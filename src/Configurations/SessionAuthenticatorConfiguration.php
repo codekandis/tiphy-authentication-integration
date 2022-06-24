@@ -11,11 +11,5 @@ use CodeKandis\Configurations\AbstractConfiguration;
  */
 class SessionAuthenticatorConfiguration extends AbstractConfiguration implements SessionAuthenticatorConfigurationInterface
 {
-	/**
-	 * {@inheritDoc}
-	 */
-	public function getRegisteredClientSessionKey(): string
-	{
-		return $this->read( 'registeredClientSessionKey' );
-	}
+	use SessionAuthenticatorConfigurationTrait;
 }
