@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [keep a changelog][xtlink-keep-a-changelog]
 and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioning].
 
+## [0.11.0] - 2022-07-20
+
+### Changed
+
+* implemented the latest composer package dependency changes
+
+[0.11.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.10.0...0.11.0
+
+---
 ## [0.10.0] - 2022-06-24
 
 ### Added
@@ -12,7 +21,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 * LDAP authenticator configuration
 * LDAP session authenticator configuration
 
-[0.10.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.9.0..0.10.0
+[0.10.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.9.0...0.10.0
 
 ---
 ## [0.9.0] - 2022-05-12
@@ -22,7 +31,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 * session authenticator configuration
 * session authenticator configuration registry trait
 
-[0.9.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.8.2..0.9.0
+[0.9.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.8.2...0.9.0
 
 ---
 ## [0.8.2] - 2021-11-08
@@ -31,7 +40,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * user entity propery mappings
 
-[0.8.2]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.8.1..0.8.2
+[0.8.2]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.8.1...0.8.2
 
 ---
 ## [0.8.1] - 2021-11-06
@@ -40,7 +49,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * implementation of `codekandis/persistence`
 
-[0.8.1]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.8.0..0.8.1
+[0.8.1]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.8.0...0.8.1
 
 ---
 ## [0.8.0] - 2021-10-18
@@ -51,7 +60,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 * implemented `codekandis/entities` to replace entity implementations
 * implemented `codekandis/persistence` to replace persistence implementations
 
-[0.8.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.7.0..0.8.0
+[0.8.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.7.0...0.8.0
 
 ---
 ## [0.7.0] - 2021-10-10
@@ -60,7 +69,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * removes the query by transaction from the users repository.
 
-[0.7.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.6.0..0.7.0
+[0.7.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.6.0...0.7.0
 
 ---
 ## [0.6.0] - 2021-10-06
@@ -69,7 +78,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * used converter in the `UserEntityPropertyMapping`
 
-[0.6.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.5.0..0.6.0
+[0.6.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.5.0...0.6.0
 
 ---
 ## [0.5.0] - 2021-10-05
@@ -78,7 +87,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * request URI to the authentication pre-dispatcher
 
-[0.5.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.4.2..0.5.0
+[0.5.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.4.2...0.5.0
 
 ---
 ## [0.4.2] - 2021-04-18
@@ -87,7 +96,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * adds missing user entity property mappings
 
-[0.4.2]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.4.1..0.4.2
+[0.4.2]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.4.1...0.4.2
 
 ---
 ## [0.4.1] - 2021-04-18
@@ -96,7 +105,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * uses the mapped user in the users repository
 
-[0.4.1]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.4.0..0.4.1
+[0.4.1]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.4.0...0.4.1
 
 ---
 ## [0.4.0] - 2021-04-18
@@ -105,7 +114,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * user entity property mapping
 
-[0.4.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.3.0..0.4.0
+[0.4.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.3.0...0.4.0
 
 ---
 ## [0.3.0] - 2021-03-20
@@ -123,7 +132,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * PHPDoc
 
-[0.3.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.2.0..0.3.0
+[0.3.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.2.0...0.3.0
 
 ---
 ## [0.2.0] - 2021-02-25
@@ -132,7 +141,7 @@ and this project adheres to [Semantic Versioning 2.0.0][xtlink-semantic-versioni
 
 * using transaction by closure
 
-[0.2.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.1.0..0.2.0
+[0.2.0]: https://github.com/codekandis/tiphy-authentication-integration/compare/0.1.0...0.2.0
 
 ---
 ## [0.1.0] - 2021-02-17
