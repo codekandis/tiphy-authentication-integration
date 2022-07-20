@@ -48,6 +48,6 @@ class UsersRepository extends AbstractRepository implements UsersRepositoryInter
 			'key' => $mappedUser[ 'apiKey' ]
 		];
 
-		return $this->databaseConnector->queryFirst( $query, $arguments, $entityPropertyMapper );
+		return $this->persistenceConnector->queryFirst( $query, $arguments, $entityPropertyMapper );
 	}
 }
